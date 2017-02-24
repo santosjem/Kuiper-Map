@@ -20,6 +20,13 @@ catchDisease[0] = Math.round(spreadRate * symptoms[0] * diseased[0]);
 treat[0] = Math.round(percentTreated * diseased[0]);
 cured[0] = 0;
 
+console.log(healthy);
+console.log(diseased);
+console.log(cured);
+console.log(symptoms);
+console.log(catchDisease);
+console.log(treat);
+
 for(var i = 1; i < days; i++) {
   healthy[i] = healthy[i - 1] - catchDisease[i - 1];
   symptoms[i] = Math.round(percentHealthyWithSymptoms * healthy[i]);
@@ -86,11 +93,6 @@ var curedCircle = svg.append('circle')
   .attr('fill', 'black')
   .attr('fill-opacity', 5);
 
-svg.selectAll('circle')
-  .data(circles)
-  .enter()
-  .append('text')
-    .attr('x', )
 
 svg.on('click', function() {
   r++;
