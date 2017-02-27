@@ -1,0 +1,26 @@
+1. Start at a university.
+* There will be an outbreak and as a student, you will try to find the source
+of the outbreak.
+
+2. Will be employed at Stats Company.
+* There will be more outbreaks and will have a higher complexity.
+
+3. Will be an advisor to a mayor.
+* There will be even more outbreak in the city and will have an even higher
+ complexity.
+
+4. Will be an advisor to the President.
+* There will be outbreaks in the city and will have an even higher complexity.
+
+5. Will be a world advisor.
+* There will be outbreaks in the world and will have even higher complexity.
+
+Variables that affect an outbreak
+
+Countermeasures
+1. Quarantine
+2. Vaccine - Treatment A vs Treatment B
+
+Data for players (from self and other players)
+1. Map
+2. Graphs

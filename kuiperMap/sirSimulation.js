@@ -3,8 +3,8 @@ var percentHealthyWithSymptoms = 0.02;
 var initialDiseased = 5;
 var days = 500;
 
-var spreadRate = 0.2;
-var percentTreated = 0.8;
+var spreadRate = 0.002;
+var percentTreated = 0.6;
 
 var healthy = [];
 var symptoms = [];
@@ -35,9 +35,13 @@ for(var i = 1; i < days; i++) {
   treat[i] = Math.round(percentTreated * diseased[i]);
   cured[i] = treat[i - 1] + cured[i - 1];
 }
+
 console.log(healthy);
 console.log(diseased);
 console.log(cured);
+console.log(symptoms);
+console.log(catchDisease);
+console.log(treat);
 
 var width = 1250;
 var height = 650;
