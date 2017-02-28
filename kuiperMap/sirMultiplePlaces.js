@@ -2,11 +2,11 @@ var unitedStatesPopulation = 500;
 var canadaPopulation = 400;
 var mexicoPopulation = 300;
 
-var percentHealthyWithSymptoms = 0.02;
+var percentHealthyWithSymptoms = 0.2;
 var initialDiseased = 5;
 
-var spreadRate = 0.2;
-var percentTreated = 0.8;
+var spreadRate = 0.02;
+var percentTreated = 0.7;
 
 /* var place = [population,
                 healthy,
@@ -54,6 +54,7 @@ var getDiseased = function(d) { return d[3];}
 var getCatchDisease = function(d) { return d[4];}
 var getCured = function(d) { return d[5];}
 var getTreat = function(d) { return d[6];}
+
 var update = function(d) {
   d[1] = updateHealthy(d);
   d[2] = updateSymptoms(d);
@@ -61,6 +62,12 @@ var update = function(d) {
   d[4] = updateCatchDisease(d);
   d[5] = updateCured(d);
   d[6] = updateTreat(d);
+  UShealthyCircle.attr('r', d[1] / 3).attr('fill-opacity', d[1] / unitedStatesPopulation);
+  USsymptomsCircle.attr('r', d[2] / 3).attr('fill-opacity', d[2] / unitedStatesPopulation);
+  USdiseasedCircle.attr('r', d[3] / 3).attr('fill-opacity', d[3] / unitedStatesPopulation);
+  UScatchDiseaseCircle.attr('r', d[4] / 3).attr('fill-opacity', d[4] / unitedStatesPopulation);
+  UStreatCircle.attr('r', d[5] / 3).attr('fill-opacity', d[5] / unitedStatesPopulation);
+  UScuredCircle.attr('r', d[6] / 3).attr('fill-opacity', d[6] / unitedStatesPopulation);
 }
 
 var width = 1250;
@@ -122,13 +129,12 @@ var UScuredCircle = svg.append('circle')
 
 
 svg.on('click', function() {
+  if((unitedStates[3] / unitedStatesPopulation) > 0.05) {
+    canada[3]++;
+    mexico[3]++;
+  }
   update(unitedStates);
-  UShealthyCircle.attr('r', unitedStates[1] / 3).attr('fill-opacity', unitedStates[1] / unitedStatesPopulation);
-  USsymptomsCircle.attr('r', unitedStates[2] / 3).attr('fill-opacity', unitedStates[2] / unitedStatesPopulation);
-  USdiseasedCircle.attr('r', unitedStates[3] / 3).attr('fill-opacity', unitedStates[3] / unitedStatesPopulation);
-  UScatchDiseaseCircle.attr('r', unitedStates[4] / 3).attr('fill-opacity', unitedStates[4] / unitedStatesPopulation);
-  UStreatCircle.attr('r', unitedStates[5] / 3).attr('fill-opacity', unitedStates[5] / unitedStatesPopulation);
-  UScuredCircle.attr('r', unitedStates[6] / 3).attr('fill-opacity', unitedStates[6] / unitedStatesPopulation);
-  console.log(unitedStates);
+  //update(canada);
+  //update(mexico);
 
 });

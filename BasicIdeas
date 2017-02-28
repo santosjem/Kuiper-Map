@@ -1,22 +1,28 @@
 1. Start at a university.
 * There will be an outbreak and as a student, you will try to find the source
 of the outbreak.
+Player actions: Determine source of outbreak
 
 2. Will be employed at Stats Company.
 * There will be more outbreaks and will have a higher complexity.
+Player actions: Let people take leave
 
 3. Will be an advisor to a mayor.
 * There will be even more outbreak in the city and will have an even higher
  complexity.
+Player actions: Close schools, close hospitals, close work
 
 4. Will be an advisor to the President.
 * There will be outbreaks in the city and will have an even higher complexity.
+Player actions: Close off states, close off borders, close off ports
 
 5. Will be a world advisor.
 * There will be outbreaks in the world and will have even higher complexity.
+Player actions: Shut down airports, close borders, shut down ports
+
 
 Variables that affect an outbreak
-1. 
+1.
 
 Countermeasures
 1. Quarantine
