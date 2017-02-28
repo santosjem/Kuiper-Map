@@ -1,10 +1,10 @@
 var population = 500;
-var percentHealthyWithSymptoms = 0.02;
+var percentHealthyWithSymptoms = 0.2;
 var initialDiseased = 5;
 var days = 500;
 
-var spreadRate = 0.002;
-var percentTreated = 0.6;
+var spreadRate = 0.02;
+var percentTreated = 0.7;
 
 var healthy = [];
 var symptoms = [];
@@ -19,13 +19,6 @@ diseased[0] = initialDiseased;
 catchDisease[0] = Math.round(spreadRate * symptoms[0] * diseased[0]);
 treat[0] = Math.round(percentTreated * diseased[0]);
 cured[0] = 0;
-
-console.log(healthy);
-console.log(diseased);
-console.log(cured);
-console.log(symptoms);
-console.log(catchDisease);
-console.log(treat);
 
 for(var i = 1; i < days; i++) {
   healthy[i] = healthy[i - 1] - catchDisease[i - 1];
@@ -102,8 +95,8 @@ svg.on('click', function() {
   r++;
   healthyCircle.attr('r', healthy[r] / 3).attr('fill-opacity', healthy[r] / population);
   symptomsCircle.attr('r', symptoms[r] / 3).attr('fill-opacity', symptoms[r] / population);
+  diseasedCircle.attr('r', diseased[r] / 3).attr('fill-opacity', diseased[r] / population);
   catchDiseaseCircle.attr('r', catchDisease[r] / 3).attr('fill-opacity', catchDisease[r] / population);
   treatCircle.attr('r', treat[r] / 3).attr('fill-opacity', treat[r] / population);
   curedCircle.attr('r', cured[r] / 3).attr('fill-opacity', cured[r] / population);
-
 });
